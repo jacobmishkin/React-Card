@@ -1,1 +1,1 @@
-A React Card Swipe app.
+A React Card Swipe UI experiment.
