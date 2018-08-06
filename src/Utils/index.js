@@ -1,11 +1,11 @@
-import Icon from './Icon';
-import Modal from './Modal';
 import Portal from './Portal';
 import Toggle from './Toggle';
+import elevation from './elevation';
+import transition from './transition';
+import colors from './colors';
 
-export {
-  Icon,
-  Modal,
-  Portal,
-  Toggle,
-}
+
+export * from './colors';
+export * from './position';
+
+export { Portal, Toggle, elevation, transition, colors}
