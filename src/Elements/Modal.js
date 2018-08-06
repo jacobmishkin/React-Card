@@ -37,7 +37,6 @@ const ModalWrapper = styled.div`
 
 const ModalCard = Card.extend`
   ${relative()}
-  min-width: 320px;
   z-index: 10;
   margin-bottom: 100px;
 `;
