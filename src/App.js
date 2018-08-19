@@ -34,9 +34,9 @@ class App extends Component {
               <Fragment>
                 <button onClick={toggle}>click me</button>
                 <Transition
-                  from={{opacity: 0}}
-                  enter={{opacity: 1}}
-                  leave={{opacity: 0}}
+                  from={{opacity: 0, bg: '#ff5959', height: '0px'}}
+                  enter={{opacity: 1, bg: '#4f9da6', height: '200px'}}
+                  leave={{opacity: 0, bg: '#ff5959', height: '0px'}}
                 >
                   {on && Header}
                 </Transition>
@@ -51,8 +51,14 @@ class App extends Component {
 
 const Header = styles => (
 
-  <Card style={{...styles}}>
+  <Card style={{
+      opacity: styles.opacity,
+      background: styles.bg,
+      overflow: 'hidden',
+      height: styles.height,
+    }}>
     <h1>yo</h1>
+    <h3>{styles.bg}</h3>
   </Card>
 );
 export default App;

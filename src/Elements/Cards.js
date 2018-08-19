@@ -6,14 +6,13 @@ export const Card = styled.div`
   background: ${lightGray};
   color: ${black};
   border-radius: 5px;
-  padding: 16px;
   text-align: center;
   cursor: pointer;
   min-width: 320px;
   max-width: 500px;
   ${elevation[4]};
   ${transition({
-    ease: 'ease-in',
+    property: 'box-shadow',
   })};
   &:hover {
     ${elevation[5]};
