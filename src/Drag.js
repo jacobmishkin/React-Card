@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Gesture } from 'react-with-gesture';
 import { Spring, animated, interpolate } from 'react-spring';
-import { Card } from 'Elements';
+import { Card, } from 'Elements';
 
 const AnimCard = Card.withComponent(animated.div);
 
@@ -21,6 +21,15 @@ const CardContainer = styled(animated.div)`
   border-radius: 5px;
 `;
 export default class Drag extends Component {
+
+  onUp = xDelta => () => {
+    if(xDelta < -250) {
+      alert('remove card');
+    } else if(xDelta > 250) {
+      alert('accept card');
+    }
+  }
+
   render() {
     return (
       <Gesture>
@@ -40,7 +49,10 @@ export default class Drag extends Component {
                   extrapolate: 'clamp'
                 })
             }}>
-              <DragCard style={{
+              <DragCard
+              onMouseUp={this.onUp(xDelta)}
+              onTouchEnd={this.onUp(xDelta)}
+              style={{
                 opacity: x.interpolate({
                     range: [-300, -100],
                     output: [0, 1],
