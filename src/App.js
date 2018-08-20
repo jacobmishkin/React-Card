@@ -7,6 +7,7 @@ import {Toggle} from 'Utils';
 import {Modal, Card} from 'Elements';
 import User from './User';
 import UserProvdier from './UserProvider';
+import Drag from './Drag';
 class App extends Component {
   render() {
     return (
@@ -16,19 +17,7 @@ class App extends Component {
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="App-title">Welcome to React</h1>
           </header>
-          <section>
-            <Toggle>
-              {({on, toggle}) => (
-                <Fragment>
-                  <button onClick={toggle}>Login</button>
-                  <Modal on={on} toggle={toggle}>
-                    <User />
-                  </Modal>
-                </Fragment>
-              )}
-            </Toggle>
-          </section>
-
+          <Drag />
           <Toggle>
             {({on, toggle}) => (
               <Fragment>
